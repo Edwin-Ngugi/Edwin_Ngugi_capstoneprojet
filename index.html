@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Capstone Dashboard</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <h1>Capstone Project Dashboard</h1>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar with dropdown buttons -->
+    <nav class="sidebar">
+      <h2>Modules</h2>
+
+      <div class="dropdown">
+        <button class="dropbtn">Resume</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="openModule(1,'en')">English</a>
+          <a href="#" onclick="openModule(1,'sw')">Kiswahili</a>
+          <a href="#" onclick="openModule(1,'ki')">Kimeru</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Autobiography</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="openModule(2,'en')">English</a>
+          <a href="#" onclick="openModule(2,'sw')">Kiswahili</a>
+          <a href="#" onclick="openModule(2,'ki')">Kimeru</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Innovation Presentation</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="openModule(3,'en')">English</a>
+          <a href="#" onclick="openModule(3,'sw')">Kiswahili</a>
+          <a href="#" onclick="openModule(3,'ki')">Kimeru</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">African Culture</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="openModule(4,'en')">English</a>
+          <a href="#" onclick="openModule(4,'sw')">Kiswahili</a>
+          <a href="#" onclick="openModule(4,'ki')">Kimeru</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Modern Society Challenges</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="openModule(5,'en')">English</a>
+          <a href="#" onclick="openModule(5,'sw')">Kiswahili</a>
+          <a href="#" onclick="openModule(5,'ki')">Kimeru</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Photographic Essay</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="openModule(6,'en')">English</a>
+          <a href="#" onclick="openModule(6,'sw')">Kiswahili</a>
+          <a href="#" onclick="openModule(6,'ki')">Kimeru</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Professional Online Presence</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="openModule(7,'en')">English</a>
+          <a href="#" onclick="openModule(7,'sw')">Kiswahili</a>
+          <a href="#" onclick="openModule(7,'ki')">Kimeru</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Scrollable Content Area -->
+    <main id="module-content">
+      <h2>Welcome</h2>
+      <p>Select a module and language to view details.</p>
+    </main>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
