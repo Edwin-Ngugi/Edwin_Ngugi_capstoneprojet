@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Capstone Dashboard</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <header>
-    <h1>Capstone Project Dashboard</h1>
+    <h1>Capstone Project</h1>
   </header>
 
   <div class="container">
-    <!-- Sidebar with dropdown buttons -->
     <nav class="sidebar">
       <h2>Modules</h2>
 
@@ -24,14 +24,7 @@
         </div>
       </div>
 
-      <div class="dropdown">
-        <button class="dropbtn">Autobiography</button>
-        <div class="dropdown-content">
-          <a href="#" onclick="openModule(2,'en')">English</a>
-          <a href="#" onclick="openModule(2,'sw')">Kiswahili</a>
-          <a href="#" onclick="openModule(2,'ki')">Kimeru</a>
-        </div>
-      </div>
+      <button class="dropbtn" onclick="openModule(2,'en')">Autobiography</button>
 
       <div class="dropdown">
         <button class="dropbtn">Innovation Presentation</button>
@@ -60,29 +53,18 @@
         </div>
       </div>
 
-      <div class="dropdown">
-        <button class="dropbtn">Photographic Essay</button>
-        <div class="dropdown-content">
-          <a href="#" onclick="openModule(6,'en')">English</a>
-          <a href="#" onclick="openModule(6,'sw')">Kiswahili</a>
-          <a href="#" onclick="openModule(6,'ki')">Kimeru</a>
-        </div>
-      </div>
+      <button class="dropbtn" onclick="openModule(6,'en')">Photographic Essay</button>
 
-      <div class="dropdown">
-        <button class="dropbtn">Professional Online Presence</button>
-        <div class="dropdown-content">
-          <a href="#" onclick="openModule(7,'en')">English</a>
-          <a href="#" onclick="openModule(7,'sw')">Kiswahili</a>
-          <a href="#" onclick="openModule(7,'ki')">Kimeru</a>
-        </div>
-      </div>
+      <button class="dropbtn" onclick="openModule(7,'en')">Professional Online Presence</button>
+
+
     </nav>
 
-    <!-- Scrollable Content Area -->
     <main id="module-content">
       <h2>Welcome</h2>
-      <p>Select a module and language to view details.</p>
+      <h3>Name: Edwin Ngugi Muruja</h3>
+      <h3>Reg No: C025-01-0839/2022</h3>  
+      <p>Select a module to view details.</p>
     </main>
   </div>
 
