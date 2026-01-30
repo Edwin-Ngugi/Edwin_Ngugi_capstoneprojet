@@ -69,47 +69,48 @@ main {
   scroll-behavior: smooth;
 }
 
-/* --- 3. MOBILE & TABLET LAYOUT (THE PRESENTABLE FIX) --- */
+/* --- 3. MOBILE OPTIMIZATION (THE "PRESENTABLE" FIX) --- */
 @media screen and (max-width: 768px) {
   body {
-    /* Allow the whole page to scroll on mobile so the sidebar is visible */
-    overflow-y: auto !important; 
-    height: auto !important;
+    overflow: auto; /* Let the whole page scroll on mobile */
+    height: auto;
   }
 
   .container {
-    /* Stack Sidebar on top of Main content */
-    display: block !important; 
-    height: auto !important;
-    overflow: visible !important;
+    flex-direction: column; /* Stack sidebar above content */
+    height: auto;
+    overflow: visible;
   }
 
   .sidebar {
-    width: 100% !important;
-    height: auto !important;
-    position: relative !important;
-    padding: 15px;
-    background: #2c3e50; /* Darker background for the menu area */
-    border-bottom: 2px solid #3498db;
+    width: 100%;
+    padding: 1rem;
+    max-height: none; /* Let it show all modules */
+    background: #2c3e50; /* Slightly darker for better contrast */
+  }
+
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
   main {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 20px !important;
-    background: white;
-    min-height: 400px; /* Ensures there is space for content */
+    padding: 1.5rem; /* Less padding on small screens */
+    width: 100%;
+    border-radius: 20px 20px 0 0; /* Nice rounded look transition from sidebar */
+    margin-top: -15px; /* Slight overlap for modern "card" feel */
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
   }
 
-  /* Make buttons slightly smaller for mobile screens */
-  .dropbtn {
-    padding: 12px;
-    font-size: 15px;
-    margin-bottom: 8px;
+  /* Make module text smaller so headings don't wrap weirdly */
+  h2, h3 {
+    font-size: 1.4rem !important;
+    line-height: 1.2;
   }
-
-  header h1 {
-    font-size: 1.1rem;
+  
+  p {
+    font-size: 1.05rem; /* Slightly larger for easier reading on phones */
+    line-height: 1.6;
   }
 }
 

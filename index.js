@@ -162,6 +162,8 @@ const modules = {
 
       <h4>Chapter 20: Reflection and Conclusion</h4>
       <p>My journey—from Kayole to Tharaka Nithi, from struggle to purpose—is a testament to faith, sacrifice, and resilience. I stand on the sacrifices of my mother, uncle, and grandparents. Joining Dedan Kimathi University has been a transformative experience that expanded my knowledge and shaped my character. My story proves that background does not define destiny. With support, determination, and gratitude, adversity can be transformed into purpose. I am excited to continue my academic journey and embrace the challenges and triumphs that await me in the coming years.</p>
+     <br>
+      <a href="slides/Youth_Mental_Health_Presentation.pptx" class="download-btn">📥 Download PowerPoint (.pptx)</a>
     `
   },
     
