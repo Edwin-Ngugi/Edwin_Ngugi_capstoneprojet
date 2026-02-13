@@ -1,57 +1,73 @@
-/* --- 1. GLOBAL RESET --- */
+/* ============================= */
+/* 1. GLOBAL RESET */
+/* ============================= */
+
 * {
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent; /* Fixes blue flash on mobile taps */
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  margin: 0;
-  background: #f0f2f5;
+  background: #f4f6f9;
   color: #1c1e21;
-  line-height: 1.5;
-  /* Desktop Fixes */
-  height: 100vh;
+  line-height: 1.7;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
+
+/* ============================= */
+/* 2. HEADER */
+/* ============================= */
 
 header {
   background: #2c3e50;
   color: white;
-  padding: 1rem;
+  padding: 1.2rem;
   text-align: center;
-  flex: 0 0 auto;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 100;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-/* --- 2. LAYOUT CONTAINER --- */
+/* ============================= */
+/* 3. LAYOUT */
+/* ============================= */
+
 .container {
   display: flex;
   flex: 1;
-  min-height: 0; /* Flexbox scroll fix */
+  min-height: 0;
 }
 
-/* Sidebar (Modules) */
+/* ============================= */
+/* SIDEBAR */
+/* ============================= */
+
 .sidebar {
-  width: 300px;
+  width: 270px;
+  min-width: 230px;
   background: #34495e;
   color: white;
   padding: 1.5rem;
   overflow-y: auto;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
 .sidebar h2 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
@@ -60,68 +76,31 @@ header h1 {
   padding-bottom: 0.5rem;
 }
 
-/* Main Content Area */
+/* ============================= */
+/* MAIN CONTENT */
+/* ============================= */
+
 main {
   flex: 1;
   background: white;
-  padding: 2.5rem;
+  padding: 3rem 2rem;
   overflow-y: auto;
-  scroll-behavior: smooth;
 }
 
-/* --- 3. MOBILE OPTIMIZATION (THE "PRESENTABLE" FIX) --- */
-@media screen and (max-width: 768px) {
-  body {
-    overflow: auto; /* Let the whole page scroll on mobile */
-    height: auto;
-  }
-
-  .container {
-    flex-direction: column; /* Stack sidebar above content */
-    height: auto;
-    overflow: visible;
-  }
-
-  .sidebar {
-    width: 100%;
-    padding: 1rem;
-    max-height: none; /* Let it show all modules */
-    background: #2c3e50; /* Slightly darker for better contrast */
-  }
-
-  .sidebar h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  main {
-    padding: 1.5rem; /* Less padding on small screens */
-    width: 100%;
-    border-radius: 20px 20px 0 0; /* Nice rounded look transition from sidebar */
-    margin-top: -15px; /* Slight overlap for modern "card" feel */
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-  }
-
-  /* Make module text smaller so headings don't wrap weirdly */
-  h2, h3 {
-    font-size: 1.4rem !important;
-    line-height: 1.2;
-  }
-  
-  p {
-    font-size: 1.05rem; /* Slightly larger for easier reading on phones */
-    line-height: 1.6;
-  }
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* --- 4. COMPONENT STYLING --- */
+/* ============================= */
+/* SIDEBAR BUTTONS */
+/* ============================= */
 
-/* Sidebar Buttons */
 .dropbtn {
   background: #3498db;
   color: white;
   padding: 14px;
-  font-size: 16px; /* Best for mobile finger taps */
+  font-size: 15px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -130,12 +109,18 @@ main {
   margin-bottom: 10px;
   font-weight: 600;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.dropbtn:hover { background: #2980b9; transform: translateY(-1px); }
+/* Show dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-/* Dropdowns */
+.dropbtn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
 .dropdown-content {
   display: none;
   background: rgba(255,255,255,0.05);
@@ -146,50 +131,308 @@ main {
 
 .dropdown-content a {
   color: #ecf0f1;
-  padding: 12px 15px;
+  padding: 10px 12px;
   text-decoration: none;
   display: block;
-  font-size: 15px;
-  border-radius: 4px;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
 }
 
-.dropdown-content a:hover { background: rgba(255,255,255,0.1); }
-.dropdown:hover .dropdown-content { display: block; }
+.dropdown-content a:hover {
+  background: rgba(255,255,255,0.15);
+}
 
-/* Images & Media */
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* ============================= */
+/* TYPOGRAPHY */
+/* ============================= */
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* ============================= */
+/* IMAGE STYLING */
+/* ============================= */
+
 .essay-img {
-  width: 100%;
-  max-width: 100%;
+  display: block;
+  margin: 1.5rem auto;
+  width: 80%;
+  max-width: 450px;
   height: auto;
-  border-radius: 12px;
-  margin: 1rem 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+
+@media screen and (min-width: 1024px) {
+  .essay-img {
+    max-height: 280px;
+  }
+}
+
+/* ============================= */
+/* PROFESSIONAL ONLINE PRESENCE IMAGES */
+/* ============================= */
+
+.presence-img {
+  display: block;
+  margin: 1.5rem auto;
+  width: 85%;
+  max-width: 320px;
+  height: auto;
+  max-height: 320px;
+  border-radius: 50%;       /* circular profile style */
+  object-fit: cover;        /* neat crop without distortion */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.presence-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* ============================= */
+/* VIDEO RESPONSIVE */
+/* ============================= */
 
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
   background: #000;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
 }
 
 .video-container iframe {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* Download Buttons */
+/* ============================= */
+/* DOWNLOAD BUTTON */
+/* ============================= */
+
 .download-btn {
-  display: block;
-  text-align: center;
+  display: inline-block;
   background: #27ae60;
   color: white;
-  padding: 15px;
+  padding: 14px 24px;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: bold;
-  margin: 1rem 0;
+  font-weight: 600;
+  margin: 1.5rem 0;
+  transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #1e8449;
+  transform: translateY(-2px);
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* ============================= */
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  main {
+    padding: 2rem 1.2rem;
+  }
+
+  .essay-img {
+    max-width: 100%;
+  }
+
+  .presence-img {
+    max-width: 220px; /* smaller profile image on mobile */
+    max-height: 220px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================= */
+/* SOCIAL CARDS & IMAGES */
+/* ============================= */
+
+.social-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.social-card-wrapper {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1rem;
+  text-align: center;
+  width: 220px;              /* consistent card size */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-card-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.social-screenshot {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 100%;
+  max-width: 180px;          /* prevents huge images */
+  height: auto;
+  max-height: 120px;         /* keeps them neat */
+  border-radius: 8px;
+  object-fit: cover;         /* crops neatly if needed */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ============================= */
+/* SOCIAL BUTTONS */
+/* ============================= */
+
+.social-btn {
+  background: #3498db;
+  color: white;
+  padding: 14px;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+/* Platform-specific colors */
+.social-btn.facebook {
+  background: #1877f2;
+}
+.social-btn.facebook:hover {
+  background: #145dbf;
+}
+
+.social-btn.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.social-btn.instagram:hover {
+  opacity: 0.9;
+}
+
+.social-btn.x-twitter {
+  background: #000000;
+}
+.social-btn.x-twitter:hover {
+  background: #333333;
+}
+
+.social-btn.tiktok {
+  background: #010101;
+}
+.social-btn.tiktok:hover {
+  background: #222222;
+}
+
+.social-btn.whatsapp {
+  background: #25d366;
+}
+.social-btn.whatsapp:hover {
+  background: #1ebe5d;
+}
+
+/* ============================= */
+/* RESPONSIVE ADJUSTMENTS */
+/* ============================= */
+
+@media screen and (max-width: 768px) {
+  .social-card-wrapper {
+    width: 45%;              /* two cards per row on tablets */
+  }
+
+  .social-screenshot {
+    max-width: 140px;
+    max-height: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .social-card-wrapper {
+    width: 100%;             /* single column on small screens */
+  }
+
+  .social-screenshot {
+    max-width: 120px;
+    max-height: 90px;
+  }
+}
+
+/* ============================= */
+/* LIST STYLING */
+/* ============================= */
+
+ul, ol {
+  margin: 1rem 0 1rem 1.5rem;   /* adds space above/below and indents from left */
+  padding-left: 1.2rem;         /* extra breathing room */
+}
+
+li {
+  margin-bottom: 0.5rem;        /* space between list items */
+  line-height: 1.6;             /* improves readability */
+  color: #333;                  /* slightly softer text color */
+}
+
+/* Optional: styled bullets for a modern look */
+ul li {
+  list-style-type: disc;        /* default bullet */
+}
+
+ol li {
+  list-style-type: decimal;     /* numbered list */
 }

@@ -41,13 +41,16 @@ const modules = {
         <li>Machine Learning</li>
         <li>IoT Systems</li>
         <li>Cyber security</li>
+        <li>Android Development</li>
+        <li>Website Development</li>
         <li>Community innovation</li>
       </ul>
     `,
     sw: `
       <h3>Edwin Ngugi Muruja</h3>
       <p>Umri: 22</p>
-      <p>Barua pepe: engugi922@gmail.com | Simu: 0115921728</p>
+      <p>Barua pepe: engugi922@gmail.com</p>
+      <p>Simu: 0115921728</p>
       <h4>Elimu</h4>
       <ul>
         <li>Shule ya Msingi St. Anselm Mururi — Alihitimu 2017</li>
@@ -73,8 +76,9 @@ const modules = {
     ki: `
       <h3>Edwin Ngugi Muruja</h3>
       <p>Miaka: 22</p>
-      <p>Email: engugi922@gmail.com | Thimũ: 0115921728</p>
-      <h4>Thirikari</h4>
+      <p>Email: engugi922@gmail.com</p>
+      <p>Thimũ: 0115921728</p>
+      <h4>Githomo</h4>
       <ul>
         <li>St. Anselm Mururi Primary — Nĩahĩtũmĩte 2017</li>
         <li>Nkubu High School — Nĩahĩtũmĩte 2021</li>
@@ -86,6 +90,8 @@ const modules = {
         <li>IoT Architecture</li>
         <li>Android Development</li>
         <li>Cyber Security</li>
+        <li>Android Development</li>
+        <li>Website Development</li>
         <li>User-Centered Design</li>
       </ul>
       <h4>Ũrĩa ũrĩ na ũhoro</h4>
